@@ -1,0 +1,24 @@
+{
+  "name": "bridge-evm-contracts",
+  "version": "1.0.0",
+  "description": "Allbridge EVM Contracts",
+  "repository": "https://github.com/allbridge-io/bridge-evm-contracts.git",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.3",
+    "@truffle/hdwallet-provider": "^1.6.0",
+    "@types/node": "^16.10.3",
+    "commander": "^8.3.0",
+    "dotenv": "^8.2.0",
+    "@celo/contractkit": "^1.1.0"
+  },
+  "scripts": {
+    "build": "truffle compile",
+    "deploy": "truffle deploy"
+  },
+  "author": "",
+  "license": "MIT"
+}
