@@ -30,7 +30,7 @@ module.exports = {
         });
       },
       network_id: '5',
-      gas: 8000000,
+      gas: 6000000,
       gasPrice: 10e9,
     },
     ropsten: {
@@ -41,7 +41,7 @@ module.exports = {
         });
       },
       network_id: '3',
-      gas: 8000000,
+      gas: 6000000,
       gasPrice: 10e9,
     },
     kovan: {
@@ -52,7 +52,7 @@ module.exports = {
         });
       },
       network_id: '42',
-      gas: 8000000,
+      gas: 6000000,
       gasPrice: 10e9,
     },
     mainnet: {
@@ -63,7 +63,7 @@ module.exports = {
             providerOrUrl: url
           });
       },
-      gas: 400000,
+      gas: 6000000,
       gasPrice: 150e9,
       network_id: 1
     },
@@ -75,7 +75,7 @@ module.exports = {
             providerOrUrl: url
           });
       },
-      gas: 8000000,
+      gas: 6000000,
       gasPrice: 10e9,
       network_id: '56', // eslint-disable-line camelcase
     },
@@ -99,7 +99,7 @@ module.exports = {
             providerOrUrl: url
           });
       },
-      gas: 8000000,
+      gas: 6000000,
       gasPrice: 50e9,
       network_id: '137', // eslint-disable-line camelcase
     },
@@ -117,6 +117,17 @@ module.exports = {
     celo: {
       provider: kit.connection.web3.currentProvider,
       network_id: '*', // eslint-disable-line camelcase
+    },
+    fantom: {
+      provider: function() {
+        return new HDWalletProvider({
+          privateKeys: [process.env.FANTOM_PK],
+          providerOrUrl: 'https://rpc.ftm.tools'
+        });
+      },
+      gas: 6000000,
+      gasPrice: 500e9,
+      network_id: '250', // eslint-disable-line camelcase
     }
   },
   compilers: {
