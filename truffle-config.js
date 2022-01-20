@@ -118,6 +118,16 @@ module.exports = {
       provider: kit.connection.web3.currentProvider,
       network_id: '*', // eslint-disable-line camelcase
     },
+    aurora: {
+      provider: function() {
+        return new HDWalletProvider({
+          privateKeys: [process.env.AURORA_PK],
+          providerOrUrl: 'https://mainnet.aurora.dev'
+        });
+      },
+      gas: 10000000,
+      network_id: '1313161554', // eslint-disable-line camelcase
+    },
     fantom: {
       provider: function() {
         return new HDWalletProvider({
